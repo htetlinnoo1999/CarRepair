@@ -29,6 +29,8 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{asset('panel/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}} ">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -101,5 +103,10 @@
 <script src="{{asset('panel/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('panel/dist/js/demo.js')}}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+@stack('scripts')
 </body>
 </html>

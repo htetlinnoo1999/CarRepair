@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\CarDataTable;
 use App\Models\Car;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,9 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CarDataTable $dataTable)
     {
-        return view('car.index');
+        return $dataTable->render('admin.car.index');
     }
 
     /**
@@ -24,7 +25,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view('car.create');
+        return view('admin.car.create');
     }
 
     /**
@@ -59,7 +60,7 @@ class CarController extends Controller
     public function edit($id)
     {
         $record = Car::find($id);
-        return view('car.edit', compact('record'));
+        return view('admin.car.edit', compact('record'));
     }
 
     /**
@@ -85,6 +86,6 @@ class CarController extends Controller
     public function destroy($id)
     {
         Car::destroy($id);
-        return redirect()->route('car.index')->with('success', 'Your Car record has successfully deleted');
+        return response()->json(['message' => 'deleted']);
     }
 }
