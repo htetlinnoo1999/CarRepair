@@ -80,6 +80,12 @@ class BookingDataTable extends DataTable
             'car.car_no' => [
                 'title' => 'Car Number'
             ],
+            'price' => [
+                'title' => 'Rental Cost'
+            ],
+            'days' => [
+                'title' => 'No of Days'
+            ],
             'start_date' => [
                 'title' => 'Start Date'
             ],
