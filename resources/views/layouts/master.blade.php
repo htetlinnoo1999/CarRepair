@@ -54,6 +54,7 @@
     <!-- Main content -->
         <section class="content">
             <!-- /.content -->
+            @include('admin.layouts.flash-message')
             @yield('content')
         </section>
     </div>

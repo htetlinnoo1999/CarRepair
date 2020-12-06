@@ -15,7 +15,10 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('date');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+            $table->string('pick_up_time');
+            $table->integer('days');
             $table->foreignId('user_id');
             $table->foreignId('car_id');
             $table->integer('price');

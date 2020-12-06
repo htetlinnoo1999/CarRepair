@@ -11,7 +11,7 @@ class Booking extends Model
     protected $guarded = [];
 
     protected $fillable = [
-        'date', 'user_id', 'car_id', 'price'
+        'start_date', 'end_date', 'pick_up_time', 'user_id', 'car_id', 'price', 'days'
     ];
 
     //relations

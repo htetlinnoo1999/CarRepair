@@ -1,0 +1,38 @@
+.bg-custom {
+    background-color: #899832;
+}
+.car__menu {
+    background-color: #f3f3f3;
+    height: 100%;
+}
+
+.car__listing {
+    width: 75%;
+    margin: 0 auto;
+    border: 1px solid #899832;
+    border-radius: 0;
+    height: 180px;
+}
+
+.img__container {
+    width: 30%;
+    height: 100%;
+    border-right: 1px dashed hsla(0,0%,41.6%,.5);
+}
+
+.img__item {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+.select__button {
+    color: #899832;
+    border-color: #899832;
+    padding: 3px 10px;
+}
+
+.book-now-btn {
+    background: #899832 !important;
+    color: white;
+}

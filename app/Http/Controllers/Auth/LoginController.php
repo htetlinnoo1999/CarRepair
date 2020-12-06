@@ -42,8 +42,10 @@ class LoginController extends Controller
     public function redirectTo()
     {
         if (Auth::user()->is_admin) {
+            // dd(Auth::user());
             return 'admin/all-users';
         }else {
+            // dd(Auth::user(), 'fail');
             return '/';
         }
     }

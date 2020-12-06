@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,14 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'main']);
+
+Route::post('book-now', [BookingController::class, 'bookNow'])->name('bookNow');
 
 Auth::routes();
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('all-users', [UserController::class, 'showUsers'])->name('allUsers');
+    Route::get('bookings', [UserController::class, 'showBookings'])->name('allBookings');
     Route::resource('cars', CarController::class);
 });
 

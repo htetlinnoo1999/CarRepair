@@ -19,7 +19,7 @@
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-server"></i> <span>Car Management</span>
+                    <i class="fa fa-car"></i> <span>Car Management</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -48,6 +48,11 @@
             <li>
                 <a href="{{route('allUsers')}}">
                     <i class="fa fa-user"></i> <span>Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('allBookings')}}">
+                    <i class="fa fa-book"></i> <span>Bookings</span>
                 </a>
             </li>
 
