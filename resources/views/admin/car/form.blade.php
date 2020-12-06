@@ -35,6 +35,22 @@
 </div>
 
 <div class="form-group">
+    <div id="wrapper">
+        <label for="logo_image" class="card-title">Car Image</label><br>
+        @if(isset($record->image))
+            <img id="preview_logo" src="{{$record->image}}" width="300" alt="">
+        @endif
+        <img id="image" style="width: 300px"/><br><br>
+        <input type="file" name="image" accept="image/*"
+               onchange="preview_image(event,'image')">
+        @error('logo')
+        <h5 class="text-danger">{{$message}}</h5>
+        @enderror
+    </div>
+</div>
+
+
+<div class="form-group">
     <label>Remark</label>
     <textarea rows="4" name="remark" class="form-control">{{$record->remark ?? ''}}</textarea>
     @error('remark')

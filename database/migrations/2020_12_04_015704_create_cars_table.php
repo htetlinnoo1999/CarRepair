@@ -19,6 +19,7 @@ class CreateCarsTable extends Migration
             $table->string('car_company');
             $table->string('car_no');
             $table->string('price');
+            $table->string('image');
             $table->text('remark')->nullable();
             $table->timestamps();
         });

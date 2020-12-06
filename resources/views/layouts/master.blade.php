@@ -72,6 +72,15 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button);
+    function preview_image(event, name) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById(name);
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('panel/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>

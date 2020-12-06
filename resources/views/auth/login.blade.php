@@ -4,11 +4,11 @@
 
 <div class="login-box">
   <div class="login-logo">
-    <a href="#"><b>Car</b>Repair</a>
+    <a href="#"><b>Dream</b>Ride</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to repair your car</p>
+    <p class="login-box-msg">Sign in for car rental</p>
 
     <form action="{{route('login')}}" method="post">
         @csrf

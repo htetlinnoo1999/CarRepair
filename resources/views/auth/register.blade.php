@@ -3,7 +3,7 @@
 @section('content')
 <div class="register-box">
   <div class="register-logo">
-    <a href="#"><b>Car</b>Repair</a>
+    <a href="#"><b>Dream</b>Ride</a>
   </div>
 
   <div class="register-box-body">
@@ -29,7 +29,7 @@
                 </span>
             @enderror
       </div>
-      
+
       <div class="form-group has-feedback">
         <input type="tel" class="form-control" @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" placeholder="Phone" required>
         <span class="glyphicon glyphicon-phone form-control-feedback"></span>

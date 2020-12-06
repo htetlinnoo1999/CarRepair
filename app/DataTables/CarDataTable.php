@@ -23,7 +23,11 @@ class CarDataTable extends DataTable
             ->eloquent($query)
             ->addColumn('action', function($data) {
                 return $this->getActionColumn($data);
-            });
+            })
+            ->editColumn('image', function($data) {
+                return "<img src='$data->image' alt='Car Image' width='150'/>";
+            })
+            ->rawColumns(['image', 'action']);
     }
 
     /**
@@ -83,6 +87,9 @@ class CarDataTable extends DataTable
             ],
             'price' => [
                 'title' => 'Rental Cost'
+            ],
+            'image' => [
+                'title' => 'Image'
             ],
             'remark' => [
                 'title' => 'Remark'
