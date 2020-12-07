@@ -24,9 +24,14 @@
         <link href="{{ asset('css/timepicker.css') }}" rel="stylesheet">
     </head>
 </head>
-<body>
+<body class="car__menu">
 @include('user.layouts.navbar')
-@yield('content')
+
+<section>
+    @include('admin.layouts.flash-message')
+    @yield('content')
+</section>
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

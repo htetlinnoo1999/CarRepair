@@ -19,4 +19,10 @@ class BookingController extends Controller
         Booking::create(array_merge($request->all(), $data));
         return redirect('/')->with('success', "Your booking is successful.");
     }
+
+    public function userBookings()
+    {
+        $bookings = Booking::with('car')->where('user_id', Auth::id())->get();
+        return view('user.booking', compact('bookings'));
+    }
 }

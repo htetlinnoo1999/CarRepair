@@ -1,27 +1,25 @@
 @extends('layouts.user')
 
 @section('content')
-<section class="car__menu">
-    <div class="container pt-5">
-        @foreach ($cars as $car)
-        <div class="card flex-row flex-wrap car__listing mb-4">
-            <div class="img__container">
-                <img class="img-fluid img__item" src="http://localhost:8000/storage/images/Rknus3COPmHa5gvJITjwqUuAFyD5IlgzGs2FRcb0.jpg" alt="">
-            </div>
-            <div class="card-block px-2 pt-2">
-                <h4 class="card-title">{{$car->type}}</h4>
-                <p class="card-text">{{$car->car_no}} | {{$car->car_company}}</p>
-                <p class="card-text">{{$car->price}}MMK Per Day</p>
-                <button type="button" onclick="addCarId({{$car->id}})" class="btn select__button" data-toggle="modal" data-target="#exampleModalCenter">
-                    Select
-                </button>
-            </div>
-            <div class="w-100"></div>
+<div class="container pt-5">
+    @foreach ($cars as $car)
+    <div class="card flex-row flex-wrap car__listing mb-4">
+        <div class="img__container">
+            <img class="img-fluid img__item" src="http://localhost:8000/storage/images/Rknus3COPmHa5gvJITjwqUuAFyD5IlgzGs2FRcb0.jpg" alt="">
         </div>
-        @endforeach
-        <br>
+        <div class="card-block px-2 pt-2">
+            <h4 class="card-title">{{$car->type}}</h4>
+            <p class="card-text">{{$car->car_no}} | {{$car->car_company}}</p>
+            <p class="card-text">{{$car->price}}MMK Per Day</p>
+            <button type="button" onclick="addCarId({{$car->id}})" class="btn select__button" data-toggle="modal" data-target="#exampleModalCenter">
+                Select
+            </button>
+        </div>
+        <div class="w-100"></div>
     </div>
-</section>
+    @endforeach
+    <br>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -93,9 +91,20 @@
         }
 
         function submit() {
+            let user = {!! json_encode(Auth::user()) !!}
             let start_date = $('#start_date').val()
             let end_date = $('#end_date').val()
             let time = $('#pickUpTime').val()
+            if (user === null) {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Sorry...',
+                    text: 'Please login to make rental!',
+                }).then(res => {
+                    window.location.href = '/login'
+                })
+                return false;
+            }
             if(!start_date || !end_date){
                 Swal.fire({
                     icon: 'error',

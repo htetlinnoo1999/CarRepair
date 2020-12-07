@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'main']);
 
+Route::get('my-bookings', [BookingController::class, 'userBookings'])->name('myBookings')->middleware('auth');
+
 Route::post('book-now', [BookingController::class, 'bookNow'])->name('bookNow');
 
 Auth::routes();
