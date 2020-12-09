@@ -22,7 +22,7 @@ class BookingController extends Controller
 
     public function userBookings()
     {
-        $bookings = Booking::with('car')->where('user_id', Auth::id())->get();
+        $bookings = Booking::with('car')->where('user_id', Auth::id())->orderBy('id','DESC')->get();
         return view('user.booking', compact('bookings'));
     }
 }

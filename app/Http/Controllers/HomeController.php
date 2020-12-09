@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function main()
     {
-        $cars = Car::orderBy('id', 'DESC')->get();
+        $cars = Car::inRandomOrder()->get();
         return view('user.main', compact('cars'));
     }
 }

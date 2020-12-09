@@ -21,8 +21,8 @@
                 <td><img src="{{$booking->car->image}}" width="100" alt="car_img"></td>
                 <td>{{$booking->pick_up_time}}</td>
                 <td>{{$booking->days}} Days</td>
-                <td>{{$booking->start_date}}</td>
-                <td>{{$booking->end_date}}</td>
+                <td>{{Carbon\Carbon::parse($booking->start_date)->format('Y-m-d')}}</td>
+                <td>{{Carbon\Carbon::parse($booking->end_date)->format('Y-m-d')}}</td>
                 <td>{{$booking->price}}</td>
             </tr>
             @endforeach

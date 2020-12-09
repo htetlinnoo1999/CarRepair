@@ -5,7 +5,7 @@
     @foreach ($cars as $car)
     <div class="card flex-row flex-wrap car__listing mb-4">
         <div class="img__container">
-            <img class="img-fluid img__item" src="http://localhost:8000/storage/images/Rknus3COPmHa5gvJITjwqUuAFyD5IlgzGs2FRcb0.jpg" alt="">
+            <img class="img-fluid img__item" src={{$car->image}} alt="">
         </div>
         <div class="card-block px-2 pt-2">
             <h4 class="card-title">{{$car->type}}</h4>
